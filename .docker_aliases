@@ -1,0 +1,15 @@
+## Docker aliases
+# Kill all running containers.
+alias dkkillall="docker kill $(docker ps -q)"
+# Delete all stopped containers.
+alias dkcleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+# Delete all untagged images.
+alias dkcleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+# Restart Docker
+alias dkrestart="killall Docker && open /Applications/Docker.app"
+# Container logs
+alias dklogs="docker logs -f"
+# See running containers
+alias dkps="docker ps -a"
+# See container IP
+alias dkip='docker inspect --format "{{ .NetworkSettings.IPAddress }}"'
