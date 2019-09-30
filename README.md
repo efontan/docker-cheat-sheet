@@ -127,17 +127,25 @@ connect to the database running in the container
  
 Now you can connect your DB client (like [DBeaver](https://dbeaver.io/)) to *locahost:3306*.
 
-**Run RabbitMQ locally**
+**Run RabbitMQ**
 > docker run -d -p 15672:15672 -p 5672:5672 -p 5671:5671 --hostname rabbitmq --name rabbitmq rabbitmq:3-management
 
 - Login at http://localhost:15672/ using guest/guest
 - Verify rabbit connection in port:		
 	 `nc -vz localhost 5672`
 
-**Run Redis locally**
+**Run Redis**
 > docker run -d --name redis -p 6379:6379 redis
 
 connect to redis using `redis-cli -h localhost -p 6379`
+
+**Run MongoDB**
+> sudo mkdir /var/lib/mongodb		
+> docker volume create mongodbdata		
+> docker run -d --name mongodb -p 27017:27017 -v mongodbdata:/var/lib/mongodb mongo:4.0
+
+Access into Mongo client:
+> docker exec -it mongodb mongo
 
 **Auto-restart**    
 To restart services when your machine restart just add this flag:
