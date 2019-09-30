@@ -11,10 +11,12 @@ alias dkrestart='osascript -e 'quit app "Docker"'; open -a Docker'
 alias dklogs="docker logs -f"
 # See running containers
 alias dkps="docker ps -a"
-# Get container IP
+# See container IP
 alias dkip='docker inspect --format "{{ .NetworkSettings.IPAddress }}"'
 # Docker run
 alias dkrun='docker run'
+# Docker run -it
+alias dkexec='docker exec -it'
 # Start a container
 alias dkstart="docker start"
 # Stop container
