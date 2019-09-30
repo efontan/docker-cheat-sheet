@@ -6,7 +6,7 @@ alias dkcleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(do
 # Delete all untagged images.
 alias dkcleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
 # Restart Docker
-alias dkrestart="killall Docker && open /Applications/Docker.app"
+alias dkrestart='osascript -e 'quit app "Docker"'; open -a Docker'
 # Container logs
 alias dklogs="docker logs -f"
 # See running containers
