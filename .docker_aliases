@@ -13,3 +13,17 @@ alias dklogs="docker logs -f"
 alias dkps="docker ps -a"
 # See container IP
 alias dkip='docker inspect --format "{{ .NetworkSettings.IPAddress }}"'
+# Docker run
+alias dkrun='docker run'
+# Start a container
+alias dkstart="docker start"
+# Stop container
+alias dkstop="docker stop"
+# Kill container
+alias dkkill="docker kill"
+# Remove container
+alias dkrm="docker rm"
+# List volumes
+alias dkvls="docker volume ls"
+# Remove volume
+alias dkvrm="docker volume rm"
